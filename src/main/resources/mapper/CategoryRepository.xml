@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.repository.CategoryRepository">
+
+    <select id="queryCategory" resultType="com.entity.Category">
+      SELECT
+        c.cid , c.cname , c.level , c.create_time , c.last_modify_time
+      FROM
+        category c
+      ORDER BY c.level DESC
+    </select>
+</mapper>
