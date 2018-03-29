@@ -4,28 +4,28 @@ package com.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
 
+//@PropertySource(value = "classpath:application.properties")
+//@ConfigurationProperties(prefix = "spring")
 @Configuration
-@PropertySource(value = "classpath:application.properties")
-@ConfigurationProperties(prefix = "spring")
 @MapperScan("com.repository")
 public class DataSourceConfiguration {
 
     @Value("${spring.datasource.url}")
     private String url;
 
-    @Value("${spring.datasource.username}")
+//    @Value("${spring.datasource.username}")
+    @Value("${spring.datasource.data-username}")
     private String username;
 
-    @Value("${spring.datasource.password}")
+//    @Value("${spring.datasource.password}")
+    @Value("${spring.datasource.data-password}")
     private String password;
 
     @Value("${spring.datasource.driver-class-name}")

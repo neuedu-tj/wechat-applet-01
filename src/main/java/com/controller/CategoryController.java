@@ -1,11 +1,14 @@
 package com.controller;
 
 
+import com.entity.Category;
 import com.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
@@ -17,9 +20,8 @@ public class CategoryController {
     private CategoryRepository categoryRepository;
 
     @GetMapping(value = "/category")
-    public String getProducts() {
-
-        return categoryRepository.queryCategory().toString();
+    public List<Category> getProducts() {
+        return categoryRepository.queryCategory();
         
     }
 
